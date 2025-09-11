@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from '../components/Button'
 
 function Login() {
     const [stayLogged, setStayLogged] = useState(false)
@@ -59,7 +60,7 @@ function Login() {
             <span className=''>Stay logged in.</span>
         </div>
 
-        <button className='text-white text-2xl font-bold rounded-2xl bg-orange-500 block border w-full p-3'>Login</button>
+        <Button/>
 
       </form>
     </div>

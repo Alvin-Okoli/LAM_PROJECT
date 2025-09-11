@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { jsx } from 'react/jsx-runtime'
-import UserReport from './UserReport'
+import UserReport from '../components/UserReport'
+import Button from '../components/Button'
 
 function UserForm() {
   const[team, setteam]= useState(true)
@@ -69,7 +70,7 @@ function UserForm() {
     e.preventDefault()
   }
   return (
-    <div className='mb-80 px-6 bg-inherit w-full'>
+    <div className='mb- px-6 w-full'>
       <div>
         <div className='mt-4 mb-8 text-xl font-semibold'>GENERAL INFO</div>
         {
@@ -106,6 +107,7 @@ function UserForm() {
       </div>
       <form onSubmit={HandleSubmit}>
         <UserReport/>
+        <Button text='submit'/>
       </form>
     </div>
   )

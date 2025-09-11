@@ -172,7 +172,7 @@
     ]
 
    return (
-     <div className='bg-inherit w-full'>
+     <div className='bg-inherit w-full mb-24'>
        <div>THE REPORTS</div>
 
        <div>
@@ -223,7 +223,6 @@
        <div>
         <div>Retain entries for next session</div>
        </div>
-       <button>Submit</button>
      </div>
    )
  }
