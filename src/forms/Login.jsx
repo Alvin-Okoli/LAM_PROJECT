@@ -33,7 +33,7 @@ function Login() {
           placeholder='Enter your last name' 
           className='bg-white  w-full p-2.5 px-4 border border-gray-400 rounded-lg'
           value={firstname}
-          onChange={(e)=>setFirstname(e.target.value)}
+          onChange={(e)=>setLastName(e.target.value)}
           />
           <div  className='text-red-600 text-lg'>Please enter your last name</div>
         </div>

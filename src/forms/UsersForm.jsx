@@ -84,7 +84,7 @@ function UserForm() {
                     <div className='font-normal my-1'>Team</div>
                     <div  className='grid grid-cols-2 gap-4'>
                       <div 
-                      className={`text-lg text-black mb-4 p-2 px-4 bg-gray-50 border ${team? 'border-orange-500' : 'border-gray-300'} rounded-lg flex justify-between hover:cursor-pointer`}
+                      className={`text-lg text-black mb-4 p-2 px-4 border ${team? 'border-orange-500 bg-white' : 'border-gray-300 bg-gray-50'} rounded-lg flex justify-between hover:cursor-pointer`}
                       onClick={()=>setteam(true)}
                       >
                         <div>1</div>
@@ -92,7 +92,7 @@ function UserForm() {
                       </div>
 
                       <div 
-                      className={`text-lg text-black mb-4 p-2 px-4 bg-gray-50 border ${!team? 'border-orange-500' : 'border-gray-300'} rounded-lg flex justify-between hover:cursor-pointer`}
+                      className={`text-lg text-black mb-4 p-2 px-4 bg-gray-50 border ${!team? 'border-orange-500 bg-gray-50' : 'border-gray-300 bg-white'} rounded-lg flex justify-between hover:cursor-pointer`}
                       onClick={()=>setteam(false)}
                       >
                         <div>2</div>
