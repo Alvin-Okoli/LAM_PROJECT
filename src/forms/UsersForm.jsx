@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { jsx } from 'react/jsx-runtime'
 import UserReport from '../components/UserReport'
 import Button from '../components/Button'
+import { UserHeader } from '../components/Header'
 
 function UserForm() {
   const[team, setteam]= useState(true)
@@ -70,46 +71,49 @@ function UserForm() {
     e.preventDefault()
   }
   return (
-    <div className='mb- px-6 w-full'>
-      <div>
-        <div className='mt-4 mb-8 text-xl font-semibold'>GENERAL INFO</div>
-        {
-          generalInfo.map((info, i)=>(
-              <div key={i}>
-                <div className='font-normal my-1'>{info.title}</div>
-                <div className='text-lg text-gray-500 mb-4 p-2 px-4 bg-gray-50 border border-gray-300 rounded-lg'>{info.info? info.info: 'Halo'}</div>
+    <>
+      <UserHeader/>
+      <div className='mb- px-6 w-full'>
+        <div>
+          <div className='mt-4 mb-8 text-xl font-semibold'>GENERAL INFO</div>
+          {
+            generalInfo.map((info, i)=>(
+                <div key={i}>
+                  <div className='font-normal my-1'>{info.title}</div>
+                  <div className='text-lg text-gray-500 mb-4 p-2 px-4 bg-gray-50 border border-gray-300 rounded-lg'>{info.info? info.info: 'Halo'}</div>
 
-                {i === 6 &&
-                  <div>
-                    <div className='font-normal my-1'>Team</div>
-                    <div  className='grid grid-cols-2 gap-4'>
-                      <div 
-                      className={`text-lg text-black mb-4 p-2 px-4 border ${team? 'border-orange-500 bg-white' : 'border-gray-300 bg-gray-50'} rounded-lg flex justify-between hover:cursor-pointer`}
-                      onClick={()=>setteam(true)}
-                      >
-                        <div>1</div>
-                        {team&&<img src="Property 1=checked.png" alt="selected" className='h-4 mt-2'/>}
-                      </div>
+                  {i === 6 &&
+                    <div>
+                      <div className='font-normal my-1'>Team</div>
+                      <div  className='grid grid-cols-2 gap-4'>
+                        <div 
+                        className={`text-lg text-black mb-4 p-2 px-4 border ${team? 'border-orange-500 bg-white' : 'border-gray-300 bg-gray-50'} rounded-lg flex justify-between hover:cursor-pointer`}
+                        onClick={()=>setteam(true)}
+                        >
+                          <div>1</div>
+                          {team&&<img src="Property 1=checked.png" alt="selected" className='h-4 mt-2'/>}
+                        </div>
 
-                      <div 
-                      className={`text-lg text-black mb-4 p-2 px-4 bg-gray-50 border ${!team? 'border-orange-500 bg-gray-50' : 'border-gray-300 bg-white'} rounded-lg flex justify-between hover:cursor-pointer`}
-                      onClick={()=>setteam(false)}
-                      >
-                        <div>2</div>
-                        {!team&&<img src="Property 1=checked.png" alt="selected" className='h-4 mt-2'/>}
+                        <div 
+                        className={`text-lg text-black mb-4 p-2 px-4 bg-gray-50 border ${!team? 'border-orange-500 bg-gray-50' : 'border-gray-300 bg-white'} rounded-lg flex justify-between hover:cursor-pointer`}
+                        onClick={()=>setteam(false)}
+                        >
+                          <div>2</div>
+                          {!team&&<img src="Property 1=checked.png" alt="selected" className='h-4 mt-2'/>}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                }
-              </div>
-          ))
-        }
+                  }
+                </div>
+            ))
+          }
+        </div>
+        <form onSubmit={HandleSubmit}>
+          <UserReport/>
+          <Button text='submit'/>
+        </form>
       </div>
-      <form onSubmit={HandleSubmit}>
-        <UserReport/>
-        <Button text='submit'/>
-      </form>
-    </div>
+    </>
   )
 }
 

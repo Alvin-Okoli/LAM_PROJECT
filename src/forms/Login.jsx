@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
 import Button from '../components/Button'
+import { LoginHeader } from '../components/Header'
 
 function Login() {
     const [stayLogged, setStayLogged] = useState(false)
-    const [firstname, setFirstname] = useState(false)
-    const [lastName, setLastName] = useState(false)
+    const [firstname, setFirstname] = useState('')
+    const [lastName, setLastName] = useState('')
 
   const HandleSubmit = (e)=>{
     e.preventDefault()
   }
   return (
-    <div className='px-6'>
+    <>
+      <LoginHeader/>
+
+      <div className='px-6 py-8 border-t border-b-gray-400'>
       <h3 className='text-2xl font-semibold py-6'>Login</h3>
 
       <form onSubmit={HandleSubmit} className='text-xl'>
@@ -32,7 +36,7 @@ function Login() {
           type="text" 
           placeholder='Enter your last name' 
           className='bg-white  w-full p-2.5 px-4 border border-gray-400 rounded-lg'
-          value={firstname}
+          value={lastName}
           onChange={(e)=>setLastName(e.target.value)}
           />
           <div  className='text-red-600 text-lg'>Please enter your last name</div>
@@ -64,6 +68,7 @@ function Login() {
 
       </form>
     </div>
+    </>
   )
 }
 

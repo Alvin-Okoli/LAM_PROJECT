@@ -2,10 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import UserForm from './forms/UsersForm'
 import Login from './forms/Login'
-import Header from './Header'
 import UserConfirmation from './components/UserConfirmation'
 import AdminForm from './forms/AdminForm'
-import AdminGenInfo from './components/AdminGenInfo'
 
 function App() {
   const [signup, setSignup] = useState(1)
@@ -15,15 +13,13 @@ function App() {
   }
 
   return (
-    <div className='bg-[#FFFDF3] pb-20'>
+    <div className='bg-[#FFFDF3] pb-20 font-'>
       <button onClick={changePage}>Switch page</button>
-      <Header/>
-      {/* <AdminForm/> */}
+      {/* <UserForm/> */}
       {signup === 1 && <Login/>}
       {signup === 2 && <UserForm/>}
       {signup === 3 && <UserConfirmation/>}
       {signup === 4 && <AdminForm/>}
-      {/* {signup === 5 && <AdminGenInfo/>}       */}
     </div>
   )
 }
