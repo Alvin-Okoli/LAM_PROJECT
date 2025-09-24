@@ -3,6 +3,7 @@ import { jsx } from 'react/jsx-runtime'
 import UserReport from '../components/UserReport'
 import Button from '../components/Button'
 import { UserHeader } from '../components/Header'
+import { Navigate, NavLink, useNavigate } from 'react-router-dom'
 
 function UserForm() {
   const[team, setteam]= useState(true)
@@ -67,13 +68,17 @@ function UserForm() {
     }
   ]
 
+  const navigate = useNavigate()
+
   const HandleSubmit = (e)=>{
     e.preventDefault()
+
+    navigate('/approved')
   }
   return (
     <>
       <UserHeader/>
-      <div className='mb- px-6 w-full'>
+      <div className='mb-6 px-6 w-full'>
         <div>
           <div className='mt-4 mb-8 text-xl font-semibold'>GENERAL INFO</div>
           {
@@ -110,6 +115,7 @@ function UserForm() {
         </div>
         <form onSubmit={HandleSubmit}>
           <UserReport/>
+          {/* <NavLink to='/approved'><Button text='submit'/></NavLink> */}
           <Button text='submit'/>
         </form>
       </div>

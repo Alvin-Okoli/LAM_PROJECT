@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Button from '../components/Button'
 import { LoginHeader } from '../components/Header'
+import { NavLink } from 'react-router-dom'
 
 function Login() {
     const [stayLogged, setStayLogged] = useState(false)
@@ -9,13 +10,15 @@ function Login() {
 
   const HandleSubmit = (e)=>{
     e.preventDefault()
+
   }
+
   return (
     <>
       <LoginHeader/>
 
       <div className='px-6 py-8 border-t border-b-gray-400'>
-      <h3 className='text-2xl font-semibold py-6'>Login</h3>
+      <h3 className='text-2xl py-6'>LOGIN</h3>
 
       <form onSubmit={HandleSubmit} className='text-xl'>
         <div className='my-4'>
@@ -27,7 +30,7 @@ function Login() {
           value={firstname}
           onChange={(e)=>setFirstname(e.target.value)}
           />
-          <div className='text-red-600 text-lg'>Please enter your first name</div>
+          <div className='text-red-600 text-sm'>Please enter your first name</div>
         </div>
 
         <div className='my-4'>
@@ -64,7 +67,7 @@ function Login() {
             <span className=''>Stay logged in.</span>
         </div>
 
-        <Button/>
+        <NavLink to='/leader'><Button/></NavLink> 
 
       </form>
     </div>
