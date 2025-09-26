@@ -8,11 +8,6 @@ import AdminForm from './forms/AdminForm'
 import {createBrowserRouter, createRoutesFromElements, RouterProvider, Route} from 'react-router-dom'
 
 function App() {
-  const [signup, setSignup] = useState(1)
-  const changePage = ()=>{
-    setSignup(prev => prev === 4? 1 : prev+1)
-    console.log(signup)
-  }
 
   const router =  createBrowserRouter(
     createRoutesFromElements(
@@ -26,8 +21,8 @@ function App() {
   )
 
   return (
-    <div className='bg-[#FFFDF3] '>
-    <RouterProvider router={router}/>
+    <div className='bg-[#FFFDF3] font-exo'>
+      <RouterProvider router={router}/>
     </div>
   )
 }
